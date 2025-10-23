@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student CRUD (Fetch API)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="header">
+        <img src="ITlogo.png" alt="">
+        <div class="header-text-container">
+            <h2>Colegio de Kidapawan</h2>
+            <h2>INFORMATION TECHNOLOGY EDUCATION</h2>
+        </div>
+        <img src="cdklogo.png" alt="">
+    </div>
+
+    <div class="container">
+        <div class="table-header">
+            <h2>Student List</h2>
+            <div class="search-box">
+                <input class="search" name="text" placeholder="Search..." type="search" />
+                <button id="addStudentBtn" class="add-btn">Add Student</button>
+            </div>
+        </div>
+
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>DOB</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentBody"></tbody>
+        </table>
+
+        <div class="form-popup" id="formPopup">
+            <form id="studentForm" novalidate>
+                <section id="form-section">
+                    <h2>Add New Student</h2>
+
+                    <div class="field">
+                        <input id="first_name" name="first_name" placeholder="First Name" />
+                        <div class="error" data-for="first_name"></div>
+                    </div>
+
+                    <div class="field">
+                        <input id="middle_name" name="middle_name" placeholder="Middle Name" />
+                        <div class="error" data-for="middle_name"></div>
+                    </div>
+
+                    <div class="field">
+                        <input id="last_name" name="last_name" placeholder="Last Name" required />
+                        <div class="error" data-for="last_name"></div>
+                    </div>
+
+                    <div class="field">
+                        <input id="address" name="address" placeholder="Address" required />
+                        <div class="error" data-for="address"></div>
+                    </div>
+
+                    <div class="field">
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="error" data-for="gender"></div>
+                    </div>
+
+                    <div class="field">
+                        <input id="height_cm" name="height_cm" type="number" placeholder="Height (cm)" min="1"
+                            required />
+                        <div class="error" data-for="height_cm"></div>
+                    </div>
+
+                    <div class="field">
+                        <input id="weight_kg" name="weight_kg" type="number" placeholder="Weight (kg)" min="0.1"
+                            step="0.1" required />
+                        <div class="error" data-for="weight_kg"></div>
+                    </div>
+
+                    <div class="field">
+                        <input id="date_of_birth" name="date_of_birth" type="date" required />
+                        <div class="error" data-for="date_of_birth"></div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" id="submitStudentBtn" class="primary-btn">Add Student</button>
+                        <button type="button" id="closeForm" class="secondary-btn">Close</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
